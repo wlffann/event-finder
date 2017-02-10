@@ -10,7 +10,7 @@ describe 'User search' do
       expect(current_path).to eq('/search')
       expect(page).to have_content("16 events for March")
       expect(page).to have_css('.event', count: 16)
-      within('.event').first do
+      within('.event', match: :first) do
         expect(page).to have_content("Lil Wayne")
         expect(page).to have_content("2017-02-24 20:00:00")
         expect(page).to have_content("700 14th Street")
